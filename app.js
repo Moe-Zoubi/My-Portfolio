@@ -90,15 +90,53 @@ const vanillaJavaScript = [
 // nav bar setup
 const navbar = document.getElementById("nav");
 const topLink = document.querySelector(".top-link");
+const linksContainer = document.querySelector(".links-container");
 
 /* project display */
 const vanillaContainer = document.getElementById("vanilla-projects");
 const gameContainer = document.getElementById("game-projects");
 
 window.addEventListener("DOMContentLoaded", function () {
-    displayProjectsProjects(vanillaJavaScript,"vanilla");
-    displayProjectsProjects(games, "games");
+    displayProjects(vanillaJavaScript,"vanilla");
+    displayProjects(games, "games");
 });
+
+window.addEventListener("scroll",function(){
+    const scrollHeight = window.pageYOffset;
+    const navHeight = navbar.getBoundingClientRect().height;
+
+    if(scrollHeight > navHeight){
+        navbar.classList.add("fixed-nav");
+    }else{
+        navbar.classList.remove("fixed-nav");
+    }
+
+    if(scrollHeight > 500){
+        topLink.classList.add("show-link");
+    }else{
+        topLink.classList.remove("show-link");
+    }
+});
+
+// set nav toggle
+const navToggle = document.querySelector(".nav-toggle");
+
+const links = document.querySelector(".links");
+
+navToggle.addEventListener("click",function(){
+    // linksContainer.classList.toggle("show-links");
+    const containerHeight = linksContainer.getBoundingClientRect().height;
+    const linksHeight = links.getBoundingClientRect().height;
+    
+    if(containerHeight === 0){
+        linksContainer.style.height = `${linksHeight}px`;
+    }else{
+        linksContainer.style.height = 0;
+    }
+});
+
+
+
 
 window.addEventListener("scroll",function(){
     const scrollHeight = window.pageYOffset;
@@ -123,7 +161,7 @@ const scrollLinks = document.querySelectorAll(".scroll-link");
 scrollLinks.forEach(function(link){
     link.addEventListener("click", function(e){
         e.preventDefault();
-
+        
         const id = e.currentTarget.getAttribute("href").slice(1);
         const element = document.getElementById(id);
 
@@ -135,7 +173,7 @@ scrollLinks.forEach(function(link){
         if(!fixedNav){
             position = position - navHeight;
         }
-
+        
         if(navHeight > 82){
             position = position + containerHeight;
         }
@@ -147,7 +185,7 @@ scrollLinks.forEach(function(link){
     });
 });
 
-function displayProjectsProjects(projects, arrType) {
+function displayProjects(projects, arrType) {
     let displayProjects = projects.map(function (project) {
       return `<div class="card">
     <div class="project-title">${project.Name}</div>
