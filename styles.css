@@ -440,9 +440,11 @@ footer p {
 
 /* setup grid */
 .card-container {
+  background-color: #f2f2f2; /* Light Gray */
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Display in 3 columns */
   gap: 20px; /* Adjust gap between cards as needed */
+  margin-top: 0;
 }
 
 .card {
@@ -454,6 +456,7 @@ footer p {
   border: 1px solid #ccc;
   background-color: #e6f7ff;
   border-radius: 10px;
+  margin-top: 20px;
 }
 
 .project-title {
@@ -489,9 +492,16 @@ footer p {
 }
 
 #projects .background{
-  margin: 2rem 0;
+  margin-bottom: 0;
   padding: 5px;
   border-radius: 10px 10px 0 0;
   background-color: #f2f2f2; /* Light Gray */
   color: #333;
 }
+
+#projects .title{
+  margin-top: 2rem;
+  border-bottom: 2px solid #333; /* Add a border with a decent color */
+  padding-bottom: 0.5rem;
+}
+
