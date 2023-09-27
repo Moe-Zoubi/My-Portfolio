@@ -379,58 +379,104 @@ footer p {
   }
 }
 /* about me */
-.grid-container, .intro{
-  margin: 2rem;
-}
-#about ul {
-  list-style: none; /* Remove default bullets */
-}
-#about ul li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: red; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
-#about ul li{
-  margin-bottom: 20px;
-}
-.indent{
-  margin: 2rem;
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-gap: 10px; /* Adjust the gap between items as needed */
-}
-.education {
-  grid-column: 1; /* Place in the first column */
-  grid-row: span 2; /* Span two rows */
-  background-color: var(--clr-green-dark);
-  padding: 20px;
-}
-.skills {
-  grid-column: 2; /* Place in the second column */
-  grid-row: 1; /* Place in the first row of the second column */
-  background-color: #e0e0e0;
-  padding: 20px;
-}
-.hobbies {
-  grid-column: 2; /* Place in the second column */
-  grid-row: 2; /* Place in the second row of the second column */
-  background-color: #d0d0d0;
-  padding: 20px;
-}
-.bubble{
-  background-color: var(--clr-green-light); /* Change this to your desired background color */
-  color: #fff; /* Change this to your desired text color */
-  border-radius: 10px; /* Adjust the border-radius to control the bubble's roundness */
-  padding: 10px; /* Adjust the padding to control the spacing inside the bubble */
-  margin: 10px; /* Adjust the margin to control the spacing around the bubble */
-  display: inline-block;
+/* Style the title */
+.title h2 {
+  font-size: 1.8rem;
+  color: #333;
 }
 
+/* Style the introduction */
+.intro h2 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+/* Style the bubble */
+.bubble {
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+/* Style the unordered lists */
+#about ul {
+  list-style: none;
+  padding: 0;
+}
+
+#about ul li::before {
+  content: "\2022";
+  color: #4CAF50;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Add spacing between list items */
+#about ul li {
+  margin-bottom: 10px;
+}
+
+/* Style the grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Style the education, skills, and hobbies sections */
+.education, .skills, .hobbies {
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style headings within sections */
+.education h3, .skills h3, .hobbies h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Style subheadings within sections */
+.education h4, .skills h4 {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Style the paragraphs within sections */
+.education p, .skills p, .hobbies p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Style the lists within sections */
+.indent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.indent ul li::before {
+  content: "\2022";
+  color: #4CAF50;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Add spacing between list items within sections */
+.indent ul li {
+  margin-bottom: 8px;
+}
 /* project section */
 .center-title{
   margin: 2rem;
@@ -504,4 +550,90 @@ footer p {
   border-bottom: 2px solid #333; /* Add a border with a decent color */
   padding-bottom: 0.5rem;
 }
-
+/* contact section */
+#contact{
+  background: var(--clr-grey-10);
+}
+#contact h2{
+  color: var(--clr-black);
+}
+.contact-container{
+  width: 80%;
+  margin: 50px auto;
+}
+.contact-box{
+  border-radius: 15px;
+  background: #fff;
+  display: flex;
+}
+.contact-left{
+  flex-basis: 60%;
+  padding: 40px 60px;
+}
+.contact-right{
+  border-radius: 0px 15px 15px 0;
+  flex-basis: 60%;
+  padding: 40px 60px;
+  background: #1c00b5;
+  color: #fff;
+}
+.input-row{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.input-row .input-group{
+  flex-basis: 45%;
+}
+#contact input{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  padding-bottom: 5px;
+}
+#contact textarea{
+  width: 100%;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#contact label{
+  margin-bottom: 6px;
+  display: block;
+  color: #1c00b5;
+}
+#contact button{
+  background: #1c00b5;
+  width: 100px;
+  border: none;
+  outline: none;
+  color: var(--clr-white);
+  height: 35px;
+  border-radius: 30px;
+  margin-top: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+}
+.contact-left h3{
+  color: #1c00b5;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.contact-right h3{
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#contact tr td{
+  padding-top: 20px;
+}
+#contact tr td:first-child{
+  padding-right: 20px;
+}
+.social-icons li {
+  display: inline-block; /* This will make the list items display horizontally */
+  margin-right: 10px; /* Add some spacing between the items if needed */
+}
+.social-icons li a i {
+  color: var(--clr-black); /* Set the icon color to black */
+}
