@@ -298,6 +298,9 @@ nav {
   }
 }
 /* hero */
+.nickname{
+  color: var(--clr-white) !important;
+}
 header {
   min-height: 100vh;
   background: url(/background.jpg) center/cover no-repeat;
@@ -379,86 +382,52 @@ footer p {
   }
 }
 /* about me */
-/* Style the title */
-.title h2 {
-  font-size: 1.8rem;
-  color: #333;
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff; /* White background for the content */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a modern look */
 }
 
-/* Style the introduction */
-.intro h2 {
-  font-size: 1.5rem;
-  color: #555;
-}
-
-/* Style the bubble */
-.bubble {
-  background-color: #4CAF50;
-  color: #fff;
-  border-radius: 8px;
+.about-content {
+  text-align: center;
   padding: 20px;
-  margin: 20px 0;
-  font-size: 1rem;
 }
 
-/* Style the unordered lists */
-#about ul {
-  list-style: none;
-  padding: 0;
+.title {
+  margin-bottom: 20px;
 }
 
-#about ul li::before {
-  content: "\2022";
-  color: #4CAF50;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+.title h2 {
+  font-size: 36px;
+  color: #333; /* Title color */
 }
 
-/* Add spacing between list items */
+.title span {
+  color: #007bff; /* Accent color */
+}
+
+.intro h2 {
+  font-size: 24px;
+  color: #333; /* Text color */
+}
+
+.bubble {
+  background-color: #007bff; /* Accent color for the bubble background */
+  padding: 20px;
+  border-radius: 10px;
+}
+.bubble p{
+  color: #fff; /* Text color inside the bubble */
+}
+/* list */
 #about ul li {
   margin-bottom: 10px;
 }
-
-/* Style the grid container */
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.indent ul li {
+  margin-bottom: 8px;
 }
-
-/* Style the education, skills, and hobbies sections */
-.education, .skills, .hobbies {
-  background-color: #fff;
-  padding: 20px;
-  border: 2px solid #4CAF50;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Style headings within sections */
-.education h3, .skills h3, .hobbies h3 {
-  font-size: 1.4rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* Style subheadings within sections */
-.education h4, .skills h4 {
-  font-size: 1.2rem;
-  color: #666;
-  margin-top: 10px;
-}
-
-/* Style the paragraphs within sections */
-.education p, .skills p, .hobbies p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-/* Style the lists within sections */
 .indent ul {
   list-style: none;
   padding: 0;
@@ -473,9 +442,37 @@ footer p {
   margin-left: -1em;
 }
 
-/* Add spacing between list items within sections */
-.indent ul li {
-  margin-bottom: 8px;
+/* Add styling for the education, skills, and hobbies sections */
+.about-education {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.about-skills {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.education,
+.prior-education,
+.skills,
+.hobbies {
+  flex: 1;
+  padding: 20px;
+}
+
+.education h3,
+.prior-education h3,
+.skills h3,
+.hobbies h3 {
+  font-size: 24px;
+  color: #333; /* Text color */
+  margin-bottom: 10px;
+}
+
+.indent {
+  list-style: disc inside;
 }
 /* project section */
 .center-title{
